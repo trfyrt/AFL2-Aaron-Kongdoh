@@ -7,9 +7,16 @@
     <title>Aaron Kongdoh</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('resources/css/style.css') }}">
-    
-    <style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rock+Salt&display=swap');
+        @keyframes fade-in{
+            from{
+                opacity: 0;
+            }
+            to{
+                opacity: 1;
+            }
+        }
         body{
             background-color: #e2e2e2;
             margin: 0%;
@@ -20,12 +27,6 @@
             font-family:'Rock Salt', cursive;
             font-weight:400;
         }
-        .scrolldown{
-            text-align: center;
-            font-weight: 700;
-            text-decoration: none;
-            color: #495057;
-        }
         #scrollspy {
             position: fixed;
             width: 150px;
@@ -35,15 +36,14 @@
             height: auto;
         }
         #scrollspy .nav-link {
-            color: #495057; /* Warna teks sebelum aktif, seperti abu-abu gelap */
+            color: #495057;
+            text-align: right;
         }
         #scrollspy .nav-link.active {
-            color: #fff; /* Warna teks menjadi putih */
-            background-color: black; /* Warna latar belakang item aktif */
+            color: #fff;
+            font-weight: 700;
+            background-color: black;
             font-size: 20px;
-        }
-        .nav-link{
-            text-align: right;
         }
         h1{
             font-size: 84px;
@@ -63,22 +63,50 @@
             -webkit-text-stroke: 1px black;
             color: black
         }
+        .cv{
+            color: black;
+            text-decoration: none; 
+            transition: color 0.3s ease;
+        }
+        .cv:hover{
+            color: #E15554
+        }
         .bagian{
             height: 100vh;
             padding-top: 15vh;
             text-align: center;
+            animation: fade-in linear;
+            animation-timeline: view();
+            animation-range: entry 0% cover 50%;
+        }
+        .pic{
+            transition: transform 0.7s ease;
+            box-shadow: #495057
+        }
+        .pic:hover{
+            transform: translateY(-8px)
         }
         .pic-1{
-            max-height: 40%;
-            width: auto;
+            max-height: 40vh;
+            width: 60%;
+            object-fit: cover;
         }
         .pic-2{
-            max-height: 50%;
+            max-height: 50vh;
             width: auto;
         }
-        .pic-3{
-            max-height: 50%;
+        .project-1{
+            max-height: 40vh;
             width: auto;
+        }
+        .project-1:hover{
+            cursor: url('{{ asset('picture/logo_parkirki.svg') }}');
+        }
+        .project-2{
+            max-height: 35vh;
+            width: auto;
+            text-shadow: 2px 2px 0 #495057;
+
         }
         .btn-more{
             top: 5px
@@ -100,53 +128,126 @@
         .btn:hover{
             font-weight: 400;
             font-size: 20px;
-            color: white;
+            color: black;
             text-align: center;
+            background-color: none;
+            border: 1px solid black;
+        }
+        .progress{
+            /* background-color: #919191 */
+            box-shadow: 2px 2px 0px #495057
+        }
+        .progress-bar{
             background-color: black;
+            border: #495057;
+            transition: background-color 0.3s ease;
+        }
+        .progress-bar:hover{
+            background-color: #495057;
+        }
+        .par-obj{
+            transition: transform 0.12s ease;
         }
         </style>
 
 </head>
 <body data-bs-spy="scroll" data-bs-target="#scrollspy" data-bs-offset="0" tabindex="0">
-    
+
+    {{-- paralax bekgron--}}
+    <img src="{{ asset('picture/object2.svg') }}" alt="" class="par-obj" data-value="0.01" style="left:20vw; top:10vh; position: fixed;" width="auto" height="auto">
+    <img src="{{ asset('picture/object.svg') }}" alt="" class="par-obj" data-value="-0.1" style="left:10vw; top:40vh; position: fixed;" width="20px" height="auto">
+    <img src="{{ asset('picture/object.svg') }}" alt="" class="par-obj" data-value="-0.1" style="right:30vw; top:20vh; position: fixed;" width="20px" height="auto">
+    <img src="{{ asset('picture/object2.svg') }}" alt="" class="par-obj" data-value="0.2" style="left:24vw; bottom:12vh; position: fixed;" width="20px" height="auto">
+    <img src="{{ asset('picture/object2.svg') }}" alt="" class="par-obj" data-value="-0.02" style="right:5vw; top:34vh; position: fixed;" width="70px" height="auto">
+    <img src="{{ asset('picture/object2.svg') }}" alt="" class="par-obj" data-value="0.03" style="right:10vw; bottom:20vh; position: fixed;" width="200px" height="auto">
+
     {{-- Logo --}}
-    <img src="{{ asset('picture/Aroon.svg') }}" alt="Logo" class="fixed-top"style="left:30px; top:30px;">
+    <img src="{{ asset('picture/Aroon.svg') }}" alt="Logo" class="fixed-top"style="left:20px; top:20px;">
 
     {{-- bag 1 --}}
-    <div class="bagian container-md" id="welcome">
-        <img class="pic-1 mx-auto d-block img-fluid" src="{{ asset('picture/cat.jpg') }}" alt="gambar">
+    <div class="bagian container-md par-obj" id="welcome" data-value="0.005">
+        <img class="pic pic-1 mx-auto d-block img-fluid" src="{{ asset('picture/cat.jpg') }}" alt="gambar">
         <br>
-        <h1>Something about <br>Aaron Kongdoh</h1>
+        <h1>Something about <br><a href="#" class="cv">Aaron Kongdoh</a></h1>
     </div>
+
+    <a href="#" class="par-obj cv" data-value="0.02" style="right: 15vw; bottom: 18vh; position: absolute;">CV!(or here)</a>
+    <img src="{{ asset('picture/arrow.svg') }}" alt="" class="par-obj" data-value="0.03" style="right:23vw; bottom:21vh; position: absolute;" width="90px" height="auto">
     
-    {{-- bag 2 --}}
-    <div class="bagian container-md" id="about-me">
-        <h2>aboutme?</h2>
-        <br>
-        <img src="{{ asset('picture/cat.jpg') }}" alt="gambar" class="pic-2 mx-auto d-block img-fluid">
-        <p>wht do u think?</p>
-        <a href="#about-me" class="btn btn-more">Learn more &rarrw;</a>
+    <div id="about-me">
+        {{-- bag 2 --}}
+        <div class="bagian container-md par-obj" data-value="0.005">
+            <h2>aboutme?</h2>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <img src="{{ asset('picture/cat.jpg') }}" alt="gambar" class="pic pic-2 mx-auto d-block img-fluid">
+                    <p>wht do u think?</p>
+                    {{-- <a href="aboutme" class="btn btn-more">Learn more &rarrw;</a> --}}
+                </div>
+                <div class="col-7">
+                    <p style="text-align: justify; font-weight:600">I’m a freshman Informatics student at Universitas Ciputra Makassar with a passion for blending tech and creativity. Every project feels like a new adventure, a chance to experiment, and a fresh start for innovative ideas. I love tackling challenges head-on, viewing them as opportunities to learn, grow, and craft solutions that are both impactful and engaging.</p>
+                    <p style="text-align: justify; font-weight:600">With each problem, I strive to think outside the box, bringing together technical know-how with a spark of creativity to create solutions that stand out. My goal? To make technology not only effective but memorable and user-friendly. I’m driven by the idea that tech has no limits—and I’m excited to keep exploring what’s possible, one project at a time.</p>
+                    {{-- <p style="text-align: justify; font-weight:600">I’m an Informatics student at Universitas Ciputra Makassar, driven by a deep enthusiasm for technology and innovation. For me, every project is a doorway to fresh ideas and exciting experiments. I’m always eager to dive into new challenges, seeing each one as an opportunity to learn, grow, and test creative solutions.</p>
+                    <p style="text-align: justify; font-weight:600">I approach problem-solving with a unique perspective, aiming not only for effective outcomes but also for solutions that are engaging and memorable. My passion lies in thinking beyond conventional boundaries, combining technical skills with a creative mindset to develop technology that’s both impactful and user-friendly.</p>
+                    <p style="text-align: justify; font-weight:600">Through every project, I strive to understand problems from different angles, experimenting with methods and concepts to bring innovative solutions to life. I believe that by pushing the limits of what’s possible, I can make a meaningful difference in the world of technology, and I’m excited to keep exploring and growing in this journey.</p> --}}
+                </div>
+                <div class="col-1"></div>
+            </div>
+        </div>
+    
+        {{-- bag 2 - skill --}}
+        <div class="bagian container-md par-obj" id="skill" data-value="0.005">
+            <h2>my skill?</h2>
+            <h3>kinda mid 😔</h3>
+            <br>
+            <div class="row">
+                <div class="col-4">
+                        <p>Python</p>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                            </div>
+                        </div>
+                </div>
+                <div class="col-4">
+                        <p>Mobile Legend</i></p>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                            </div>
+                        </div>
+                </div>
+                <div class="col-4">
+                        <p>Java</i></p>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     {{-- bag 3 --}}
-    <div class="bagian container-md" id="project" >
+    <div class="bagian container-md par-obj" id="project" data-value="0.005">
         <h2>still curious?</h2>
         <br>
+        <br>
         <div class="row">
-            <div class="col-6">
+            <div class="col-5">
                 <h3 class="projects">lemme <span class="rocksalt">show</span> u<br><span style="color: #E15554; -webkit-text-stroke: 2px #E15554;"> something hot</span></h3>
                 <p class="projects" style="font-size: 16px; font-weight:600;">*my projects!</p>
-                <a href="#viewmore" class="btn btn-more float-end">View more &rarrw;</a>
+                <a href="https://github.com/trfyrt" class="btn btn-more float-end">Discover more <i class="fa fa-github"></i> &rarrw;</a>
             </div>
-            <div class="col-6">
-                <img src="{{ asset('picture/cat.jpg') }}" alt="gambar" class="pic-3 float-start">
+            <div class="col-7">
+                <a href="https://github.com/HainzelK/Siata"><img src="{{ asset('picture/siata_mockup.png') }}" alt="gambar" class="pic project-2 float-start"></a>
+                <a href="https://github.com/denywa/Parkirki-ALP"><img src="{{ asset('picture/parkirki_mockup2.png') }}" alt="gambar" class="pic project-1 float-start"></a>
             </div>
         </div>
     </div>
 
     {{-- bag 4 --}}
-    <div class="bagian container-md" id="contact">
-        <h2>is there a way to contact you?</h2>
+    <div class="bagian container-md par-obj" id="contact" data-value="0.005">
+        <h2>my contact?</h2>
         <h3>Don't worry, i got you 🫵</h3>
         social media disini
     </div>
@@ -156,17 +257,17 @@
         <nav class="nav nav-pills flex-column items-end">
             <a class="nav-link" href="#welcome" data-index="0">Top • </a>
             <a class="nav-link" href="#about-me" data-index="1">About me • </a>
-            <a class="nav-link" href="#project" data-index="2">Project • </a>
-            <a class="nav-link" href="#contact" data-index="3">Contact • </a>
+            <a class="nav-link" href="#project" data-index="3">Project • </a>
+            <a class="nav-link" href="#contact" data-index="4">Contact • </a>
         </nav>
     </nav>
 
 
     <script>
-        const sections = ["welcome", "about-me", "project", "contact"];
+        // Scroll
+        const sections = ["welcome", "about-me", "skill", "project", "contact"];
         let currentSectionIndex = 0;
     
-        // Update the current section index on sidebar link click
         document.querySelectorAll('#scrollspy .nav-link').forEach((link) => {
             link.addEventListener('click', (event) => {
                 const index = parseInt(event.target.getAttribute('data-index'));
@@ -176,24 +277,33 @@
             });
         });
     
-        // Listen to the wheel event for scroll navigation
         window.addEventListener('wheel', (event) => {
-            // Prevent default scrolling behavior to avoid the small unwanted scroll
             event.preventDefault();
     
             if (event.deltaY > 0) {
-                // Scroll down
                 if (currentSectionIndex < sections.length - 1) currentSectionIndex++;
             } else {
-                // Scroll up
                 if (currentSectionIndex > 0) currentSectionIndex--;
             }
     
-            // Smooth scroll to the targeted section
             document.getElementById(sections[currentSectionIndex]).scrollIntoView({
                 behavior: 'smooth'
             });
         }, { passive: false }); // `passive: false` to allow calling preventDefault
+
+        // parallax
+        document.addEventListener("mousemove", parallax);
+        function parallax(e){
+            document.querySelectorAll(".par-obj").forEach(function(move){
+
+                var moving_value = move.getAttribute("data-value");
+                var x = e.clientX * moving_value;
+                var y = e.clientY * moving_value;
+
+                move.style.transform = `translateX(${x}px) translateY(${y}px)`;
+            })
+        }
+        
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 </body>
