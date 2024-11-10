@@ -80,11 +80,13 @@
             animation-range: entry 0% cover 50%;
         }
         .pic{
-            transition: transform 0.7s ease;
-            box-shadow: #495057
+            transition: transform 0.7s ease, filter 0.7s ease;
+            box-shadow: #495057;
+            filter: grayscale(100%);
         }
         .pic:hover{
-            transform: translateY(-8px)
+            transform: translateY(-8px);
+            filter:grayscale(0%);
         }
         .pic-1{
             max-height: 40vh;
@@ -99,9 +101,9 @@
             max-height: 40vh;
             width: auto;
         }
-        .project-1:hover{
+        /* .project-1:hover{
             cursor: url('{{ asset('picture/logo_parkirki.svg') }}');
-        }
+        } */
         .project-2{
             max-height: 35vh;
             width: auto;
@@ -234,7 +236,7 @@
         <br>
         <div class="row">
             <div class="col-5">
-                <h3 class="projects">lemme <span class="rocksalt">show</span> u<br><span style="color: #E15554; -webkit-text-stroke: 2px #E15554;"> something hot</span></h3>
+                <h3 class="projects">lemme <span class="rocksalt">show</span> u<br><span style="color: #E15554; -webkit-text-stroke: 2px #E15554;"> something cool</span></h3>
                 <p class="projects" style="font-size: 16px; font-weight:600;">*my projects!</p>
                 <a href="https://github.com/trfyrt" class="btn btn-more float-end">Discover more <i class="fa fa-github"></i> &rarrw;</a>
             </div>
