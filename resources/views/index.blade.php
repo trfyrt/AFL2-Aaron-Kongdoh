@@ -8,7 +8,6 @@
     <title>Aaron Kongdoh</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('resources/css/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rock+Salt&display=swap');
@@ -132,10 +131,6 @@
 
         }
 
-        .pic-1:hover {
-            box-shadow: 2px 5px 30px #495057;
-        }
-
         .pic-2 {
             max-height: 50vh;
             width: auto;
@@ -254,10 +249,10 @@
         <h1>Something about <br><a href="#" class="cv">Aaron Kongdoh</a></h1>
     </div>
 
-    <a href="#" class="par-obj cv" data-value="0.02" style="right: 15vw; bottom: 18vh; position: absolute;">CV!(or
+    <a href="#" class="par-obj cv" data-value="0.02" style="right: 18vw; bottom: 18vh; position: absolute;">CV!(or
         here)</a>
     <img src="{{ asset('picture/arrow.svg') }}" alt="" class="par-obj" data-value="0.03"
-        style="right:23vw; bottom:21vh; position: absolute;" width="90px" height="auto">
+        style="right:26vw; bottom:21vh; position: absolute;" width="90px" height="auto">
 
     <div id="about-me">
         {{-- bag 2 --}}
@@ -362,7 +357,7 @@
                     </div>
                 </div>
                 <div class="col-3 float-start">
-                    <h3>kinda mid 😔</h3>
+                    <h3>idk wht to put here</h3>
                 </div>
             </div>
         </div>
