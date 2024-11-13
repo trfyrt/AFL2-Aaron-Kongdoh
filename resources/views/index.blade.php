@@ -9,266 +9,40 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rock+Salt&display=swap');
-
-        @keyframes fade-in {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        body {
-            background-color: #e2e2e2;
-            margin: 0%;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 900;
-        }
-
-        .rocksalt {
-            font-family: 'Rock Salt', cursive;
-            font-weight: 400;
-        }
-
-        .logo {
-            left: 20px;
-            top: 20px;
-        }
-
-        #scrollspy {
-            position: fixed;
-            width: 150px;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            height: auto;
-        }
-
-        #scrollspy {
-            opacity: 20%;
-            transition: opacity 0.7s ease;
-        }
-
-        #scrollspy:hover {
-            opacity: 100%;
-        }
-
-        #scrollspy .nav-link {
-            color: #495057;
-            text-align: right;
-        }
-
-        #scrollspy .nav-link.active {
-            color: #fff;
-            font-weight: 700;
-            background-color: black;
-            font-size: 20px;
-        }
-
-        h1 {
-            font-size: 72px;
-            text-align: center;
-            -webkit-text-stroke: 2px black;
-            color: black
-        }
-
-        h2 {
-            font-size: 60px;
-            text-align: center;
-            -webkit-text-stroke: 2.5px black;
-            color: black
-        }
-
-        h3 {
-            font-size: 48px;
-            text-align: center;
-            -webkit-text-stroke: 1px black;
-            color: black
-        }
-
-        h4 {
-            font-size: 24px;
-            text-align: center;
-            -webkit-text-stroke: 1px black;
-            color: black
-        }
-
-        .cv {
-            color: black;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .cv:hover {
-            color: #E15554
-        }
-
-        #cv-here {
-            right: 18vw;
-            bottom: 18vh;
-            position: absolute;
-        }
-
-        #cv-arrow{
-            right:26vw; bottom:21vh; position: absolute;
-        }
-
-        .bagian {
-            height: 100vh;
-            padding-top: 15vh;
-            text-align: center;
-            animation: fade-in linear;
-            animation-timeline: view();
-            animation-range: entry 0% cover 50%;
-        }
-
-        .pic {
-            transition: transform 0.7s ease, filter 0.7s ease, box-shadow 0.7s ease;
-            box-shadow: #495057;
-            filter: grayscale(100%);
-            border-radius: 12px
-        }
-
-        .pic:hover {
-            transform: translateY(-8px);
-            filter: none;
-        }
-
-        .pic-1 {
-            max-height: 40vh;
-            width: 60%;
-            object-fit: cover;
-            filter: blur(8px);
-
-        }
-
-        .pic-2 {
-            max-height: 50vh;
-            width: auto;
-        }
-
-        .project-1 {
-            max-height: 40vh;
-            width: auto;
-        }
-
-        .project-2 {
-            max-height: 35vh;
-            width: auto;
-        }
-
-        .btn-more {
-            top: 5px
-        }
-
-        .projects {
-            text-align: right
-        }
-
-        .item {
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .btn {
-            font-weight: 400;
-            font-size: 20px;
-            color: white;
-            text-align: center;
-            background-color: black;
-        }
-
-        .btn:hover {
-            font-weight: 400;
-            font-size: 20px;
-            color: black;
-            text-align: center;
-            background-color: none;
-            border: 1px solid black;
-        }
-
-        .progress {
-            /* background-color: #919191 */
-            box-shadow: 2px 2px 0px #495057
-        }
-
-        .progress-bar {
-            background-color: #495057;
-            border: #495057;
-            transition: background-color 0.3s ease;
-        }
-
-        .progress-bar:hover {
-            background-color: #E15554;
-        }
-
-        .contact {
-            font-size: 84px;
-            transition: color 0.3s ease;
-            text-decoration: none;
-            color: rgb(29, 29, 29);
-        }
-
-        .contact:hover {
-            color: #E15554;
-        }
-
-        .quotes {
-            padding-top: 10vh;
-            color: #495057;
-            font-family: 'Times New Roman', Times, serif;
-        }
-
-        .par-obj {
-            transition: transform 0.12s ease;
-        }
-
-        .sub-text {
-            font-size: 16px;
-            font-weight: 500;
-        }
-        .about-me-text{
-            text-align: justify; font-weight:600
-        }
-    </style>
-
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#scrollspy" data-bs-offset="0" tabindex="0">
 
     {{-- paralax bekgron --}}
-    <img src="{{ asset('picture/object2.svg') }}" alt="" class="par-obj" data-value="0.01"
+    <img src="{{ asset('assets/picture/object2.svg') }}" alt="" class="par-obj" data-value="0.01"
         style="left:20vw; top:10vh; position: fixed;" width="auto" height="auto">
-    <img src="{{ asset('picture/object.svg') }}" alt="" class="par-obj" data-value="-0.1"
+    <img src="{{ asset('assets/picture/object.svg') }}" alt="" class="par-obj" data-value="-0.1"
         style="left:10vw; top:40vh; position: fixed;" width="20px" height="auto">
-    <img src="{{ asset('picture/object.svg') }}" alt="" class="par-obj" data-value="-0.1"
+    <img src="{{ asset('assets/picture/object.svg') }}" alt="" class="par-obj" data-value="-0.1"
         style="right:30vw; top:20vh; position: fixed;" width="20px" height="auto">
-    <img src="{{ asset('picture/object2.svg') }}" alt="" class="par-obj" data-value="0.2"
+    <img src="{{ asset('assets/picture/object2.svg') }}" alt="" class="par-obj" data-value="0.2"
         style="left:24vw; bottom:12vh; position: fixed;" width="20px" height="auto">
-    <img src="{{ asset('picture/object2.svg') }}" alt="" class="par-obj" data-value="-0.02"
+    <img src="{{ asset('assets/picture/object2.svg') }}" alt="" class="par-obj" data-value="-0.02"
         style="right:5vw; top:34vh; position: fixed;" width="70px" height="auto">
-    <img src="{{ asset('picture/object2.svg') }}" alt="" class="par-obj" data-value="0.03"
+    <img src="{{ asset('assets/picture/object2.svg') }}" alt="" class="par-obj" data-value="0.03"
         style="right:10vw; bottom:20vh; position: fixed;" width="200px" height="auto">
 
     {{-- Logo --}}
-    <img src="{{ asset('picture/Aroon.svg') }}" alt="Logo" class="fixed-top logo">
+    <img src="{{ asset('assets/picture/Aroon.svg') }}" alt="Logo" class="fixed-top logo">
 
     {{-- bag 1 --}}
     <div class="bagian container-md par-obj" id="welcome" data-value="0.005">
-        <img class="pic pic-1 mx-auto d-block img-fluid" src="{{ asset('picture/cat.jpg') }}" alt="gambar">
+        <img class="pic pic-1 mx-auto d-block img-fluid" src="{{ asset('assets/picture/cat.jpg') }}" alt="gambar">
         <br>
-        <h1>Something about <br><a href="{{ asset('picture/CV.pdf') }}" target="_blank" class="cv">Aaron Kongdoh</a>
+        <h1>Something about <br><a href="{{ asset('assets/picture/CV.pdf') }}" target="_blank" class="cv">Aaron Kongdoh</a>
         </h1>
     </div>
 
-    <a href="{{ asset('picture/CV.pdf') }}" target="_blank" class="par-obj cv" id="cv-here"
+    <a href="{{ asset('assets/picture/CV.pdf') }}" target="_blank" class="par-obj cv" id="cv-here"
         data-value="0.02">CV!(or
         here)</a>
-    <img src="{{ asset('picture/arrow.svg') }}" alt="" class="par-obj" id="cv-arrow" data-value="0.03"
+    <img src="{{ asset('assets/picture/arrow.svg') }}" alt="" class="par-obj" id="cv-arrow" data-value="0.03"
         width="90px" height="auto">
 
     <div id="about-me">
@@ -278,7 +52,7 @@
             <br>
             <div class="row">
                 <div class="col">
-                    <img src="{{ asset('picture/saya2.jpg') }}" alt="gambar"
+                    <img src="{{ asset('assets/picture/saya2.jpg') }}" alt="gambar"
                         class="pic pic-2 mx-auto d-block img-fluid">
                     <p>wht do u think?</p>
                 </div>
@@ -396,10 +170,10 @@
                         class="fa fa-github"></i> &rarrw;</a>
             </div>
             <div class="col-7">
-                <a href="https://github.com/HainzelK/Siata"><img src="{{ asset('picture/siata_mockup.png') }}"
+                <a href="https://github.com/HainzelK/Siata"><img src="{{ asset('assets/picture/siata_mockup.png') }}"
                         alt="gambar" class="pic project-2 float-start"></a>
                 <a href="https://github.com/denywa/Parkirki-ALP"><img
-                        src="{{ asset('picture/parkirki_mockup2.png') }}" alt="gambar"
+                        src="{{ asset('assets/picture/parkirki_mockup2.png') }}" alt="gambar"
                         class="pic project-1 float-start"></a>
             </div>
         </div>
@@ -435,51 +209,7 @@
         </nav>
     </nav>
 
-
-    <script>
-        // Scroll
-        const sections = ["welcome", "about-me", "skill", "project", "contact"];
-        let currentSectionIndex = 0;
-
-        document.querySelectorAll('#scrollspy .nav-link').forEach((link) => {
-            link.addEventListener('click', (event) => {
-                const index = parseInt(event.target.getAttribute('data-index'));
-                if (!isNaN(index)) {
-                    currentSectionIndex = index;
-                }
-            });
-        });
-
-        window.addEventListener('wheel', (event) => {
-            event.preventDefault();
-
-            if (event.deltaY > 0) {
-                if (currentSectionIndex < sections.length - 1) currentSectionIndex++;
-            } else {
-                if (currentSectionIndex > 0) currentSectionIndex--;
-            }
-
-            document.getElementById(sections[currentSectionIndex]).scrollIntoView({
-                behavior: 'smooth'
-            });
-        }, {
-            passive: false
-        });
-
-        // parallax
-        document.addEventListener("mousemove", parallax);
-
-        function parallax(e) {
-            document.querySelectorAll(".par-obj").forEach(function(move) {
-
-                var moving_value = move.getAttribute("data-value");
-                var x = e.clientX * moving_value;
-                var y = e.clientY * moving_value;
-
-                move.style.transform = `translateX(${x}px) translateY(${y}px)`;
-            })
-        }
-    </script>
+    <script src="{{ asset('assets/js/script.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
