@@ -185,13 +185,13 @@
         }
 
         .progress-bar {
-            background-color: black;
+            background-color: #495057;
             border: #495057;
             transition: background-color 0.3s ease;
         }
 
         .progress-bar:hover {
-            background-color: #495057;
+            background-color: #E15554;
         }
 
         .contact {
@@ -277,6 +277,12 @@
                         box, bringing together technical know-how with a spark of creativity to create solutions that
                         stand out. My goal? To make technology not only effective but memorable and user-friendly. I’m
                         driven by the idea that tech has no limits—and I’m excited to keep exploring what’s possible.
+                    </p>
+                    <p style="text-align: justify; font-weight:600">In my downtime, you’ll probably find me strumming my
+                        guitar, sketching unique faces, or double-tapping every cute cat post I come across on
+                        Instagram. And if I’m not doing that, I’m likely diving into JKT48 content—watching
+                        performances, cheering on my favorite members, or... let’s be real, maybe just catching up on
+                        sleep!
                     </p>
                     {{-- <p style="text-align: justify; font-weight:600">I’m an Informatics student at Universitas Ciputra Makassar, driven by a deep enthusiasm for technology and innovation. For me, every project is a doorway to fresh ideas and exciting experiments. I’m always eager to dive into new challenges, seeing each one as an opportunity to learn, grow, and test creative solutions.</p>
                     <p style="text-align: justify; font-weight:600">I approach problem-solving with a unique perspective, aiming not only for effective outcomes but also for solutions that are engaging and memorable. My passion lies in thinking beyond conventional boundaries, combining technical skills with a creative mindset to develop technology that’s both impactful and user-friendly.</p>
