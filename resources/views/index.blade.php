@@ -313,18 +313,18 @@
                         <div class="col-4 par-obj" data-value="0.01">
                             <h4>C++</h4>
                             <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50"
+                                <div class="progress-bar" role="progressbar" style="width: 30%" aria-valuenow="30"
                                     aria-valuemin="0" aria-valuemax="100">
                                 </div>
                             </div>
                             <br>
-                            <p class="sub-text">Proficient in C++ for Arduino, with experience in building structured
+                            <p class="sub-text">Familiar in C++ for Arduino, with experience in building structured
                                 code for robotics and IoT projects.</p>
                         </div>
                         <div class="col-4 par-obj" data-value="0.04">
                             <h4>Java</h4>
                             <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70"
+                                <div class="progress-bar" role="progressbar" style="width: 65%" aria-valuenow="65"
                                     aria-valuemin="0" aria-valuemax="100">
                                 </div>
                             </div>
@@ -345,7 +345,7 @@
                                 </div>
                             </div>
                             <br>
-                            <p class="sub-text">Proficient in PHP, with experience in building robust APIs using the
+                            <p class="sub-text">Familiar with PHP, with experience in building robust APIs using the
                                 Laravel framework.</p>
                         </div>
                         <div class="col-5 par-obj" data-value="0.01">
@@ -362,8 +362,8 @@
                         <div class="col-1"></div>
                     </div>
                 </div>
-                <div class="col-3 float-start">
-                    <h3>idk wht to put here</h3>
+                <div class="col-3" style="margin-top: 20vh">
+                    <h3>kinda mid<br>:<< /h3>
                 </div>
             </div>
         </div>
@@ -451,7 +451,7 @@
             });
         }, {
             passive: false
-        }); // `passive: false` to allow calling preventDefault
+        });
 
         // parallax
         document.addEventListener("mousemove", parallax);
