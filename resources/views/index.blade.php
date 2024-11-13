@@ -34,6 +34,11 @@
             font-weight: 400;
         }
 
+        .logo {
+            left: 20px;
+            top: 20px;
+        }
+
         #scrollspy {
             position: fixed;
             width: 150px;
@@ -100,6 +105,16 @@
 
         .cv:hover {
             color: #E15554
+        }
+
+        #cv-here {
+            right: 18vw;
+            bottom: 18vh;
+            position: absolute;
+        }
+
+        #cv-arrow{
+            right:26vw; bottom:21vh; position: absolute;
         }
 
         .bagian {
@@ -216,6 +231,9 @@
             font-size: 16px;
             font-weight: 500;
         }
+        .about-me-text{
+            text-align: justify; font-weight:600
+        }
     </style>
 
 </head>
@@ -237,19 +255,21 @@
         style="right:10vw; bottom:20vh; position: fixed;" width="200px" height="auto">
 
     {{-- Logo --}}
-    <img src="{{ asset('picture/Aroon.svg') }}" alt="Logo" class="fixed-top logo"style="left:20px; top:20px;">
+    <img src="{{ asset('picture/Aroon.svg') }}" alt="Logo" class="fixed-top logo">
 
     {{-- bag 1 --}}
     <div class="bagian container-md par-obj" id="welcome" data-value="0.005">
         <img class="pic pic-1 mx-auto d-block img-fluid" src="{{ asset('picture/cat.jpg') }}" alt="gambar">
         <br>
-        <h1>Something about <br><a href="{{ asset('picture/CV.pdf') }}" target="_blank" class="cv">Aaron Kongdoh</a></h1>
+        <h1>Something about <br><a href="{{ asset('picture/CV.pdf') }}" target="_blank" class="cv">Aaron Kongdoh</a>
+        </h1>
     </div>
 
-    <a href="{{ asset('picture/CV.pdf') }}" target="_blank" class="par-obj cv" data-value="0.02" style="right: 18vw; bottom: 18vh; position: absolute;">CV!(or
+    <a href="{{ asset('picture/CV.pdf') }}" target="_blank" class="par-obj cv" id="cv-here"
+        data-value="0.02">CV!(or
         here)</a>
-    <img src="{{ asset('picture/arrow.svg') }}" alt="" class="par-obj" data-value="0.03"
-        style="right:26vw; bottom:21vh; position: absolute;" width="90px" height="auto">
+    <img src="{{ asset('picture/arrow.svg') }}" alt="" class="par-obj" id="cv-arrow" data-value="0.03"
+        width="90px" height="auto">
 
     <div id="about-me">
         {{-- bag 2 --}}
@@ -263,26 +283,23 @@
                     <p>wht do u think?</p>
                 </div>
                 <div class="col-7">
-                    <p style="text-align: justify; font-weight:600">My name is Aaron Jevon Benedict Kongdoh, but they
+                    <p class="about-me-text">My name is Aaron Jevon Benedict Kongdoh, but they
                         call me Aaron for short. I’m an Informatics student at Universitas
                         Ciputra Makassar with a passion for blending tech and creativity. Every project feels like a new
                         adventure, a chance to experiment, and a fresh start for innovative ideas. I love tackling
                         challenges head-on, viewing them as opportunities to learn, grow, and craft solutions that are
                         both impactful and engaging.</p>
-                    <p style="text-align: justify; font-weight:600">With each problem, I strive to think outside the
+                    <p class="about-me-text">With each problem, I strive to think outside the
                         box, bringing together technical know-how with a spark of creativity to create solutions that
                         stand out. My goal? To make technology not only effective but memorable and user-friendly. I’m
                         driven by the idea that tech has no limits—and I’m excited to keep exploring what’s possible.
                     </p>
-                    <p style="text-align: justify; font-weight:600">In my downtime, you’ll probably find me strumming my
+                    <p class="about-me-text">In my downtime, you’ll probably find me strumming my
                         guitar, sketching unique faces, or double-tapping every cute cat post I come across on
                         Instagram. And if I’m not doing that, I’m likely diving into JKT48 content—watching
                         performances, cheering on my favorite members, or... let’s be real, maybe just catching up on
                         sleep!
                     </p>
-                    {{-- <p style="text-align: justify; font-weight:600">I’m an Informatics student at Universitas Ciputra Makassar, driven by a deep enthusiasm for technology and innovation. For me, every project is a doorway to fresh ideas and exciting experiments. I’m always eager to dive into new challenges, seeing each one as an opportunity to learn, grow, and test creative solutions.</p>
-                    <p style="text-align: justify; font-weight:600">I approach problem-solving with a unique perspective, aiming not only for effective outcomes but also for solutions that are engaging and memorable. My passion lies in thinking beyond conventional boundaries, combining technical skills with a creative mindset to develop technology that’s both impactful and user-friendly.</p>
-                    <p style="text-align: justify; font-weight:600">Through every project, I strive to understand problems from different angles, experimenting with methods and concepts to bring innovative solutions to life. I believe that by pushing the limits of what’s possible, I can make a meaningful difference in the world of technology, and I’m excited to keep exploring and growing in this journey.</p> --}}
                 </div>
                 <div class="col-1"></div>
             </div>
@@ -396,12 +413,12 @@
         <br>
         <br>
         <a href="https://www.instagram.com/aaronjevon06/" target="_blank" class="fa fa-instagram par-obj contact"
-            data-value="0.02" style="font-size:84px;"></a>
+            data-value="0.02"></a>
         <br>
         <a href="https://x.com/florist_yrt" target="_blank" class="fa fa-twitter par-obj contact" data-value="0.009"
-            style="font-size:84px;"></a>
+            ></a>
         <a href="https://wa.me/6285211411408" target="_blank" class="fa fa-whatsapp par-obj contact"
-            data-value="0.01" style="font-size:84px;"></a>
+            data-value="0.01"></a>
         <br>
         <p class="quotes">“Our only limitations are those we set up in our own minds”<br> ― Napoleon Hill</p>
         <br>
