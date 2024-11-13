@@ -141,9 +141,6 @@
             width: auto;
         }
 
-        /* .project-1:hover{
-            cursor: url('{{ asset('picture/logo_parkirki.svg') }}');
-        } */
         .project-2 {
             max-height: 35vh;
             width: auto;
@@ -246,10 +243,10 @@
     <div class="bagian container-md par-obj" id="welcome" data-value="0.005">
         <img class="pic pic-1 mx-auto d-block img-fluid" src="{{ asset('picture/cat.jpg') }}" alt="gambar">
         <br>
-        <h1>Something about <br><a href="#" class="cv">Aaron Kongdoh</a></h1>
+        <h1>Something about <br><a href="{{ asset('picture/CV.pdf') }}" target="_blank" class="cv">Aaron Kongdoh</a></h1>
     </div>
 
-    <a href="#" class="par-obj cv" data-value="0.02" style="right: 18vw; bottom: 18vh; position: absolute;">CV!(or
+    <a href="{{ asset('picture/CV.pdf') }}" target="_blank" class="par-obj cv" data-value="0.02" style="right: 18vw; bottom: 18vh; position: absolute;">CV!(or
         here)</a>
     <img src="{{ asset('picture/arrow.svg') }}" alt="" class="par-obj" data-value="0.03"
         style="right:26vw; bottom:21vh; position: absolute;" width="90px" height="auto">
@@ -261,10 +258,9 @@
             <br>
             <div class="row">
                 <div class="col">
-                    <img src="{{ asset('picture/cat.jpg') }}" alt="gambar"
+                    <img src="{{ asset('picture/saya2.jpg') }}" alt="gambar"
                         class="pic pic-2 mx-auto d-block img-fluid">
                     <p>wht do u think?</p>
-                    {{-- <a href="aboutme" class="btn btn-more">Learn more &rarrw;</a> --}}
                 </div>
                 <div class="col-7">
                     <p style="text-align: justify; font-weight:600">My name is Aaron Jevon Benedict Kongdoh, but they
@@ -363,7 +359,7 @@
                     </div>
                 </div>
                 <div class="col-3" style="margin-top: 20vh">
-                    <h3>kinda mid<br>:<< /h3>
+                    <h3>kinda mid<br>:<</h3>
                 </div>
             </div>
         </div>
