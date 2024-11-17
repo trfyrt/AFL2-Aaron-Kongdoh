@@ -33,7 +33,7 @@
 
     {{-- bag 1 --}}
     <div class="bagian container-md par-obj" id="welcome" data-value="0.005">
-        <img class="pic pic-1 mx-auto d-block img-fluid" src="{{ asset('assets/picture/cat.jpg') }}" alt="gambar">
+        <img class="pic pic-1 mx-auto d-block img-fluid" src="{{ asset('assets/picture/banner.jpg') }}" alt="gambar">
         <br>
         <h1>Something about <br><a href="{{ asset('assets/picture/CV.pdf') }}" target="_blank" class="cv">Aaron Kongdoh</a>
         </h1>
